@@ -1,0 +1,14 @@
+---
+title: Pinball
+tags: java, android, projects
+excerpt: An WIP Android game
+---
+fig. http://i.imgur.com/wpmxR.png
+
+Pinball is a game I'm currently working on for Android
+
+h1. Videos
+
+video. http://www.youtube.com/watch?v=HI-whGPilAo
+
+video. http://www.youtube.com/watch?v=V7irKMQpwEU

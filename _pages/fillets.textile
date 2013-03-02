@@ -1,0 +1,53 @@
+---
+title: Fillets
+tags: pinball, blog, articles
+date: 20120302
+---
+I wanted a way to automatically round off corners in a path. In engineering this is called a 'fillet', in fact Fireworks has an option to fillet a path but I could not find an algorithm to do this so I had to figure it out.
+
+aside. The corner is defined as three points and a radius. The algorithm then generates a curve inside the corner
+
+fig. The end result - a filleted path | http://i.imgur.com/OSYTo.png
+
+Now, drawing an arc is pretty simple but this requires finding the position of the centre of the arc from the two lines.
+
+So the problem here is given the points $$p_0$$, $$p_1$$, $$p_2$$ and the radius $$r$$, find the point $$c$$.
+
+Originally I was doing some trigonometry involving the sine rule to find the distance from $$c$$ to $$p_1$$. This was hefty and I kept getting issues from different quadrants and problems finding the average of two angles. Anyway, this was getting far too much effort than it was worth and I was about to give up, but just then I realised I could use vectors and everything was so much easier.
+
+fig. http://i.imgur.com/cCoMl.png
+
+Firstly:
+
+aside. norm is the normalize function
+
+p. \[ p_{1->0} = \text{norm}\left(p_0 - p_1\right) \\
+p_{1->2} = \text{norm}\left(p_2 - p_1\right) \\
+\text{mid} = \text{norm}\left(p_{1->0} + p_{1->2}\right)\]
+
+p. Now the distance from p1 to c I knew from my failed trigonometry attempts was $$\left.r \middle/ \sin{\frac{1}{2}\theta}\right.$$ where theta was the angle between the two lines. We know that the sin of the angle between two vectors is the cross product of each. Therefore:
+
+p. \[ \text{hyp} = \frac{r}{\lvert p_{1->0} \times \text{mid}\rvert} \]
+
+And then $$c$$ can be found by the following
+
+\[ c = p_1 + mid\ hyp \]
+
+Simple five lines of code which works whichever direction the lines are coming from. The only thing to look out for is when the lines are parallel and a divide-by-zero error occurs.
+
+h1. As a bonus
+
+I also needed to find the points where the circle touched the lines. This was also easy.
+
+bc.. 
+p1to2normal = p1to2.normal() // counter-clockwise normal
+p1to0normal = -p1to0.normal() // clockwise normal
+// These normals should point 'outwards' from c
+if p1to0.cross(p1to2) < 0 then
+  p1to2normal *= -1
+  p1to0normal *= -1
+end
+a = p1to2normal.multiply(r).add(c)
+b = p1to0normal.multiply(r).add(c)
+
+p. Hope this helps someone!

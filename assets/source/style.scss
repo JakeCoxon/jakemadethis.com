@@ -1,0 +1,161 @@
+/* Style */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  font-weight: 100;
+  color: #aaa;
+  line-height: 1.6;
+  font-size: 14px;
+  background-color: #222;
+}
+
+#header {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  h1 {
+    text-align: center;
+    margin: 10px 0px 40px 0;
+    padding: 0 20px 10px 20px;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 1;
+  }
+  .nav {
+    a {
+      font-weight: 100;
+      margin: 2px;
+      border: 0;
+    }
+  }
+  small {
+    color: #aaa;
+  }
+}
+hr {
+  width: 50%;
+  border: 0;
+  background-color: #666;
+  height: 1px;
+  margin: 50px auto;
+}
+#page {
+  font-size: 16pt;
+  h1, h2, h3 { 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    font-weight: 100;
+  }
+  pre {
+    background-color: #ccc;
+    padding: 10px;
+    overflow-x: auto;
+  }
+  aside {
+    font-style: italic;
+    color: #bbb;
+  }
+  .figure {
+    padding: 10px 0;
+    text-align: center;
+  
+    &:not(.noshadow) img,
+    &:not(.noshadow) iframe {
+      box-shadow: 0 0 50px #111;
+    }
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  }
+}
+#header {
+  img {
+    box-shadow: 0 0 50px #111;
+  }
+}
+.download-link {
+  font-size: 20pt;
+  text-align: center;
+  a {
+    color: #0f0;
+  }
+}
+a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 2px;
+  margin-top: 1px;
+  h1, h2, h3 {
+    color: inherit;
+  }
+  &:hover {
+    color: #0d0;
+  }
+}
+
+
+
+/* Layout */
+
+
+.center {
+  text-align: center;
+}
+#page {
+  text-align: left;
+  width: 800px;
+  margin: 0 auto;
+  > * {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  > ul {
+    padding-left: 80px;
+  }
+  .figure {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  aside {
+    float: right;
+    width: 100px;
+    margin-left: 20px;
+  }
+}
+#header {
+  img {
+    margin-top: 20px;
+  }
+}
+#footer {
+  width: 600px;
+  margin: 0 auto 50px auto;
+  ul.childlist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    a {
+      border: 0;
+      margin: 20px 0;
+      padding: 0 10px;
+      display: block;
+      h2 {
+        font-weight: 100;
+        margin: 0;
+      }
+    }
+    li p {
+      margin: 0 0 0 10px;
+      font-weight: normal;
+    }
+  }
+}

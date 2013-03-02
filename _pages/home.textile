@@ -1,0 +1,7 @@
+---
+title: Home Page
+author: Jake Coxon
+---
+Jake Coxon is an awesome 20 year old undergrad at the University of York, UK.
+
+He can code pretty well in Scala, Ruby, Java, PHP, Javascript, C# and is currently working on a few Android projects: "Source":source.html and "Pinball":pinball.html as well as occasional freelancing.

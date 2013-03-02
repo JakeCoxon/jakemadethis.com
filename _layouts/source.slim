@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title #{title} - jakemadethis
+    link rel="stylesheet" href="./assets/source/style.css"
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    script src="assets/script.js"
+    == partial '_tracking'
+  body data-hover-color="#00ff00"
+    .center
+      #header
+        div.nav.mainnav
+          a href="home.html" jakemadethis
+          a href="blog.html" blog
+          a href="projects.html" projects
+          a href="experiments.html" experiments
+        - if has_tags?
+          div.nav.subnav
+            - tags.each do |tag|
+              a href="#{tag}.html" = tag
+        - if name == 'home'
+          div.nav.subnav
+            a href="http://github.com/jakecoxon" github
+            a href="http://twitter.com/jkcxn" twitter
+        - if dated?
+          small Written by #{meta[:author] || 'Jake Coxon'} on #{date.strftime("%d %b '%y")}
+        img src="assets/source/banner.png" height="300"
+
+      #page
+        == to_html
+
+
+    #footer
+      - if has_childs?
+        - if to_html.length > 0
+          hr
+        ul.childlist
+          - childs_sorted.each do |child|
+            li
+              a href="#{child.name}.html"
+                h2 = child.title
+                - if child.has_meta? :excerpt
+                  p = child.meta[:excerpt]
+                - elsif child.dated?
+                  p = child.date.strftime("%d %b '%y")
+
+

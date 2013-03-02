@@ -1,0 +1,185 @@
+@import url("http://fonts.googleapis.com/css?family=Josefin+Sans:300,400");
+
+/* Style */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia;
+  font-weight: 100;
+  color: #111;
+  line-height: 1.6;
+  font-size: 14px;
+  background: url('paper_fibers.png');
+}
+
+#header {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  h1 {
+    text-align: center;
+    margin: 10px 0px 40px 0;
+    padding: 0 20px 10px 20px;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 1;
+  }
+  .nav {
+    a {
+      font-weight: 100;
+      margin: 2px;
+      border: 0;
+    }
+  }
+  small {
+    color: rgba(0,0,0,0.6);
+  }
+}
+#page {
+  background-color: #fff;
+
+  h1, h2, h3 { 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgba(0,0,0,0.8);
+    font-weight: 100;
+  }
+  pre {
+    background-color: rgba(0,0,0,0.1);
+    padding: 10px;
+    border-radius: 3px;
+    overflow-x: auto;
+  }
+  code {
+    display: inline-block;
+  }
+  aside {
+    font-style: italic;
+    box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.5);
+    background-color: #fff;
+    code {
+      font-style: normal;
+    }
+  }
+  .figure {
+    padding: 10px 0;
+    text-align: center;
+  
+    &:not(.noshadow) img,
+    &:not(.noshadow) iframe {
+      box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    }
+    img, iframe {
+      max-width: 100%;
+    }
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  }
+  ul.childlist {
+    h1, h2 {
+      color: inherit;
+    }
+  }
+
+  hr {
+    width: 50%;
+    border: 0;
+    background-color: #666;
+    height: 1px;
+    margin: 50px auto;
+  }
+}
+a {
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #f60;
+  padding: 2px;
+  margin-top: 1px;
+  h1, h2, h3 {
+    color: inherit;
+  }
+  &:hover {
+    //background-color: #f60;
+    //color: white;
+  }
+}
+#footer {
+  background-color: rgba(255,255,255,0.5);
+  > * {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+
+
+/* Layout */
+
+
+.center {
+  text-align: center;
+}
+#page {
+  width: 800px;
+  margin: 10px auto 0 auto;
+  padding: 20px;
+  > * {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  > ul {
+    padding-left: 80px;
+  }
+  .figure {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  aside {
+    float: right;
+    width: 150px;
+    margin: 10px;
+    margin-left: -85px;
+    margin-right: -85px;
+    padding: 8px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  ul.childlist {
+    margin: 0 100px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    a {
+      border: 0;
+      margin: 20px 0;
+      padding: 0 10px;
+      display: block;
+      h2 {
+        font-weight: 100;
+        margin: 0;
+      }
+    }
+    li p {
+      margin: 0 0 0 10px;
+      font-weight: normal;
+    }
+  }
+}
+#footer {
+  width: 800px;
+  margin: 0 auto 0px auto;
+  padding: 5px 20px;
+  > * {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+#footerspacing {
+  margin-bottom: 50px;
+}
